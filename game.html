@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Wargame</title>
+    <style>
+        /* CSS styling for the game */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Wargame</h1>
+    <p>Welcome to the wargame!</p>
+    
+    <!-- Buttons for game actions -->
+    <button id="attackButton">Attack</button>
+    <button id="defendButton">Defend</button>
+
+    <!-- Result display -->
+    <div id="result"></div>
+
+    <script>
+        // JavaScript for game logic
+        document.getElementById("attackButton").addEventListener("click", function() {
+            // Perform attack action
+            var attackResult = Math.random() < 0.5 ? "Success" : "Failure";
+            displayResult(attackResult);
+        });
+
+        document.getElementById("defendButton").addEventListener("click", function() {
+            // Perform defend action
+            var defendResult = Math.random() < 0.5 ? "Success" : "Failure";
+            displayResult(defendResult);
+        });
+
+        function displayResult(result) {
+            // Display the result
+            var resultDisplay = document.getElementById("result");
+            resultDisplay.textContent = "Result: " + result;
+            resultDisplay.style.color = result === "Success" ? "green" : "red";
+        }
+    </script>
+</body>
+</html>
